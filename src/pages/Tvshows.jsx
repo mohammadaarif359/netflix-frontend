@@ -37,7 +37,7 @@ const Tvshows = () => {
   }, [genresLoaded]);
 
   onAuthStateChanged(firebaseAuth,(currentUser)=>{
-    //if(currentUser) navigate("/");
+    if(!currentUser) navigate("/login");
   })
 
   console.log('tv components',movies)

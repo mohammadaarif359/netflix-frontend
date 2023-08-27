@@ -28,7 +28,7 @@ const Movies = () => {
 
   useEffect(() => {
     dispatch(getGenres());
-  }, []);
+  }, [dispatch]);
 
   useEffect(() => {
     if (genresLoaded) {
@@ -37,7 +37,7 @@ const Movies = () => {
   }, [genresLoaded]);
 
   onAuthStateChanged(firebaseAuth,(currentUser)=>{
-    //if(currentUser) navigate("/");
+    if(!currentUser) navigate("/login");
   })
 
   console.log('movies components',movies)
